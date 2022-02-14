@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Controls = () => {
-  return <div>Controls</div>;
+  const [add, setAdd] = useState('');
+
+  return (
+    <>
+      Controls
+      <form>
+        <input
+          type="text"
+          placeholder="add an item"
+          value={add}
+          onChange={(e) => setAdd(e.target.value)}
+        />
+        <button>Add this item</button>
+      </form>
+    </>
+  );
 };
 
 export default Controls;
