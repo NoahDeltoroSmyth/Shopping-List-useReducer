@@ -1,12 +1,12 @@
 import React from 'react';
 import ListItem from '../ListItem/ListItem';
 
-const List = ({ items }) => {
+const List = ({ items, deleteItem }) => {
   return (
     <>
       {items.map((item) => (
         <ul key={item.id}>
-          <ListItem item={item} />
+          <ListItem item={item} deleteItem={deleteItem} />
         </ul>
       ))}
     </>

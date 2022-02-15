@@ -9,6 +9,9 @@ function reducer(state, action) {
     case 'add': {
       return [...state, { id: action.id, text: action.text }];
     }
+    case 'delete': {
+      return state.filter((state) => state.id !== action.id);
+    }
     default: {
       throw new Error(`Unknown action: ${action.type}`);
     }
@@ -25,11 +28,18 @@ const ShoppingCart = () => {
       text: text,
     });
   };
+
+  const DeleteItem = (item) => {
+    dispatch({
+      type: 'delete',
+      id: item,
+    });
+  };
   return (
     <>
       <h1>Let&apos;s go shopping</h1>
       <Controls addItem={AddItem} />
-      <List items={items} />
+      <List items={items} deleteItem={DeleteItem} />
     </>
   );
 };
