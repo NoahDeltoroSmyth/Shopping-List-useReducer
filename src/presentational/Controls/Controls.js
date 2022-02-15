@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 
-const Controls = () => {
+const Controls = ({ addItem }) => {
   const [add, setAdd] = useState('');
 
-  const handleAdd = () => {};
+  const handleAdd = (e) => {
+    e.preventDefault();
+    setAdd('');
+    addItem(add);
+  };
 
   return (
     <>
