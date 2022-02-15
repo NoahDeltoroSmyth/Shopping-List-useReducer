@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import Controls from '../../presentational/Controls/Controls';
 import List from '../../presentational/List/List';
 
-const initialState = [];
+const initialState = [{ id: 0, text: 'chicken' }];
 
 function reducer(state, action) {
   switch (action.type) {
@@ -22,14 +22,14 @@ const ShoppingCart = () => {
     dispatch({
       type: 'add',
       id: items.length + 1,
-      text,
+      text: text,
     });
   };
   return (
     <>
       ShoppingCart
       <Controls addItem={AddItem} />
-      <List />
+      <List items={items} />
     </>
   );
 };
