@@ -10,18 +10,15 @@ const Controls = ({ addItem }) => {
   };
 
   return (
-    <>
-      Controls
-      <form onSubmit={handleAdd}>
-        <input
-          type="text"
-          placeholder="add an item"
-          value={add}
-          onChange={(e) => setAdd(e.target.value)}
-        />
-        <button type="submit">Add this item</button>
-      </form>
-    </>
+    <form onSubmit={handleAdd}>
+      <input
+        type="text"
+        placeholder="add an item"
+        value={add}
+        onChange={(e) => setAdd(e.target.value)}
+      />
+      <button type="submit">Add this item</button>
+    </form>
   );
 };
 
