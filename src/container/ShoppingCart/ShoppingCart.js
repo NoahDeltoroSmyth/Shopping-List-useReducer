@@ -27,6 +27,7 @@ const ShoppingCart = () => {
   };
   return (
     <>
+      <h1>Let&apos;s go shopping</h1>
       <Controls addItem={AddItem} />
       <List items={items} />
     </>
