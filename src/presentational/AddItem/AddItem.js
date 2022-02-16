@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Controls = ({ addItem }) => {
+const Add = ({ addItem }) => {
   const [add, setAdd] = useState('');
 
   const handleAdd = (e) => {
@@ -22,4 +22,4 @@ const Controls = ({ addItem }) => {
   );
 };
 
-export default Controls;
+export default Add;

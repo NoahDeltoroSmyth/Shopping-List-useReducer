@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import Controls from '../../presentational/Controls/Controls';
+import Add from '../../presentational/AddItem/AddItem';
 import List from '../../presentational/List/List';
 
 const initialState = [];
@@ -53,7 +53,7 @@ const ShoppingCart = () => {
   return (
     <>
       <h1>Let&apos;s go shopping</h1>
-      <Controls addItem={AddItem} />
+      <Add addItem={AddItem} />
       <List items={items} deleteItem={DeleteItem} editItem={EditItem} />
     </>
   );
