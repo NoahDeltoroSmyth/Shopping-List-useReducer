@@ -13,12 +13,16 @@ function reducer(state, action) {
       return state.filter((state) => state.id !== action.id);
     }
     case 'edit': {
-      return state.map((s) => {
-        if (s.id === action.task.id) {
+      return state.map((state) => {
+        if (state.id === action.task.id) {
           return action.task;
         }
-        return s;
+        return state;
       });
+    }
+
+    case 'clear': {
+      return initialState;
     }
     default: {
       throw new Error(`Unknown action: ${action.type}`);
@@ -50,7 +54,15 @@ const ShoppingProvider = ({ children }) => {
       task,
     });
   };
-  const contextValue = { items, dispatch, AddItem, DeleteItem, EditItem };
+
+  const clearAll = (items) => {
+    dispatch({
+      type: 'clear',
+      items,
+    });
+  };
+
+  const contextValue = { items, dispatch, AddItem, DeleteItem, EditItem, clearAll };
   return <ShoppingContext.Provider value={contextValue}>{children}</ShoppingContext.Provider>;
 };
 
