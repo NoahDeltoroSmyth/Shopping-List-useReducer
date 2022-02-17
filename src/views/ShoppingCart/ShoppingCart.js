@@ -1,55 +1,11 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import Add from '../../components/AddItem/AddItem';
 import List from '../../components/List/List';
-
-const initialState = [];
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'add': {
-      return [...state, { id: action.id, text: action.text }];
-    }
-    case 'delete': {
-      return state.filter((state) => state.id !== action.id);
-    }
-    case 'edit': {
-      return state.map((s) => {
-        if (s.id === action.task.id) {
-          return action.task;
-        }
-        return s;
-      });
-    }
-    default: {
-      throw new Error(`Unknown action: ${action.type}`);
-    }
-  }
-}
+import { useShoppingList } from '../../context/ShoppingContext';
 
 const ShoppingCart = () => {
-  const [items, dispatch] = useReducer(reducer, initialState);
+  const { items, DeleteItem, AddItem, EditItem } = useShoppingList();
 
-  const AddItem = (text) => {
-    dispatch({
-      type: 'add',
-      id: items.length + 1,
-      text: text,
-    });
-  };
-
-  const DeleteItem = (item) => {
-    dispatch({
-      type: 'delete',
-      id: item,
-    });
-  };
-
-  const EditItem = (task) => {
-    dispatch({
-      type: 'edit',
-      task,
-    });
-  };
   return (
     <>
       <Add addItem={AddItem} />
