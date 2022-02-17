@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <h1 className="main-header">Let&apos;s go shopping</h1>
       <span>{items.length} items in shopping list</span>
-      <button onClick={() => clearAll(items)}>clear all</button>
+      <button onClick={() => clearAll()}>clear all</button>
     </>
   );
 };

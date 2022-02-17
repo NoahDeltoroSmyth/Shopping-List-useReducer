@@ -55,10 +55,9 @@ const ShoppingProvider = ({ children }) => {
     });
   };
 
-  const clearAll = (items) => {
+  const clearAll = () => {
     dispatch({
       type: 'clear',
-      items,
     });
   };
 
