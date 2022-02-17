@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import Add from '../../presentational/AddItem/AddItem';
-import List from '../../presentational/List/List';
+import Add from '../../components/AddItem/AddItem';
+import List from '../../components/List/List';
 
 const initialState = [];
 
@@ -52,7 +52,6 @@ const ShoppingCart = () => {
   };
   return (
     <>
-      <h1>Let&apos;s go shopping</h1>
       <Add addItem={AddItem} />
       <List items={items} deleteItem={DeleteItem} editItem={EditItem} />
     </>

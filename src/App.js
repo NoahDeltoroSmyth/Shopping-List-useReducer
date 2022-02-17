@@ -1,9 +1,11 @@
 import './App.css';
-import ShoppingCart from './container/ShoppingCart/ShoppingCart';
+import Header from './components/Header/Header';
+import ShoppingCart from './views/ShoppingCart/ShoppingCart';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <ShoppingCart />
     </div>
   );
