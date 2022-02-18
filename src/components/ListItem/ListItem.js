@@ -10,6 +10,7 @@ const ListItem = ({ item, deleteItem, editItem }) => {
       {editing && (
         <>
           <input
+            aria-label="edit-input"
             value={text}
             onChange={(e) => {
               editItem({ ...item, text: e.target.value });
@@ -20,7 +21,7 @@ const ListItem = ({ item, deleteItem, editItem }) => {
       )}
       {!editing && (
         <>
-          {text}
+          <p>{text}</p>
           <button onClick={() => setEditing(true)}>Edit</button>
           <button onClick={() => deleteItem(id)}>Delete</button>
         </>
